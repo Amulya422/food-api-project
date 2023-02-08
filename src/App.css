@@ -4,59 +4,66 @@
   flex-direction: column;
   align-items: center;
 }
-
+.container{
+  background-color: rgb(204, 249, 247);
+}
 .submit_btn{
   padding:0.6rem;
-  background-color: lightblue;
+  background-color: rgb(90, 241, 63);
   border:none;
   color:white;
   border-radius: 0.4rem;
-  margin-left: 0.2rem;
+  margin-left: 0.5rem;
+  height: 2.5rem;
+  margin-top: 1.5rem;
 }
-
-.search_field{
-  padding:0.5rem;
-}
-
 .card-container{
   margin-top: 1.5rem;
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 2rem;
 }
-
+.heading{
+  color: rgba(235, 30, 30, 0.888);
+}
 .card{
   width:18rem;
   box-shadow:rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding:2rem;
   border-radius: 0.5rem;
 }
-
+.form-container{
+  display: flex;
+}
 .select-box{
   padding:0.6rem;
-  background-color: lightblue;
-  border:none;
+  background-color: rgb(90, 241, 63);
   color:white;
   border-radius: 0.4rem;
-  margin-left: 0.2rem;
-
+  margin-left: 0.5rem;
+  height: 2.5rem;
+  margin-top: 1.5rem;
 }
 .search_field{
-  padding:0.6rem;
-  background-color: lightblue;
+  padding:0.5rem;
+  margin-top: 1.5rem;
+  height: 1.5rem;
+  margin-left: 25rem;
+  background-color: rgb(90, 241, 63);
   border:none;
   color:white;
   border-radius: 0.4rem;
-  margin-left: 0.2rem;
-
+  width: 25rem;
 }
 
 @media (max-width:450px) {
-  .container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  .search_field{
+    background-color: rgb(90, 241, 63);
+    border:none;
+    color:white;
+    border-radius: 0.4rem;
+    width: 10rem;
+    margin-bottom: 1rem;
   }
   .card-container{
   display: grid;
@@ -70,4 +77,16 @@
  .card-img-top{
   width:9rem;
  }
+ .select-box{
+  padding:0.6rem;
+  background-color: rgb(90, 241, 63);
+  color:white;
+  border-radius: 0.4rem;
+}
+.heading{
+  font-size: large;
+}
+.form-container{
+  display: flex;
+}
 }

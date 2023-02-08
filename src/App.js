@@ -3,7 +3,8 @@ import './App.css';
 import Axios from 'axios'
 import { YOUR_APP_ID, YOUR_APP_KEY  } from './constants';
 import Card from './Card';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 
 function App() {
@@ -17,32 +18,36 @@ function App() {
   // function sample(){
   //   console.log("hellooo")
   // }
+useEffect(() => {
+  getReceipeInfo();
+}, [])
 
 
   const getReceipeInfo = async() =>{
+  
     var result = await Axios.get(url);
     setApiData(result.data.hits)
   }
 
   return (
-    <div className='container'>
-      <h1>Food Receipe</h1>
-      <form className='form-container'>
-
-        <input type="text" value={mealType} className='search_field' onChange={(e) => {setSearchValue(e.target.value)}}/>
+    <div className='container' >
+      
+      <form className='form-container '>
+        <h1 className='heading'>Food Receipe</h1>
+        <input type="text" placeholder='Search Here...!' className='search_field' onChange={(e) => {setSearchValue(e.target.value)}}/>
        
         <select className='select-box' onChange={(e) => {setMealType(e.target.value)}}>
-          <option>breakfast</option>
-          <option>lunch</option>
-          <option>dinner</option>
-          <option>snacks</option>
+          <option>Breakfast</option>
+          <option>Lunch</option>
+          <option>Dinner</option>
+          <option>Snacks</option>
         </select>
         <input type="button" value="Search" className='submit_btn' onClick={getReceipeInfo}/>
       </form>
-      <h1>{mealType}</h1>
-      <div className='card-container'>
+     
+      <div className='card-container' >
       {apiData.map(val => {
-        return <Card image ={val.recipe.image} label={val.recipe.label}/> }
+        return <Card image ={val.recipe.image} label={val.recipe.label} /> }
       )}
 
       
